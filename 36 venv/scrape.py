@@ -16,8 +16,8 @@ import time
 # CONSTANTS
 user32 = ctypes.windll.user32
 sub = 'photoshopbattles'
-SPI_SETDESKWALLPAPER = 0x14     #which command (20)
-SPIF_UPDATEINIFILE   = 0x0
+SPI_SETDESKWALLPAPER = 0x14     # which command (20)
+SPIF_UPDATEINIFILE   = 0x0  # some magic flag for doing witch craft that makes windows change immediately
 attempts = 0
 jpgsrc = 'wallpaper.jpg'
 pngsrc = 'wallpaper.png'
@@ -75,7 +75,7 @@ if __name__ == "__main__":
                     attempts += 1
                     continue
             if 'that are not a photoshop' in rand_comment.body:
-                #magic string for catching automod
+                # magic string for catching automod of PSB
                 attempts += 1
         except Exception as e:
             """
