@@ -37,8 +37,8 @@ def parse_imgur_url(url):
 
 
 if __name__ == "__main__":
-    post = reddit.subreddit(sub).random()
     while True:
+    	post = reddit.subreddit(sub).random()
         if attempts > 5:
             "if we fail 5 times, every post is probably deleted. move to next post"
             attempts = 0
@@ -70,7 +70,7 @@ if __name__ == "__main__":
                     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 1, png_fp, SPIF_UPDATEINIFILE)
                     # the 1 is a constant for 'fit' mode of images. thia makes it so the full thing appears, with black
                     # bars to make it fit if needed.
-                    time.sleep(3600)
+                    time.sleep(300)
                 else:
                     attempts += 1
                     continue
